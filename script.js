@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Atrasar a digitação para ocorrer depois da revelação do conteúdo
         setTimeout(typeWriter, 1000); // Espera 1 segundo após a revelação
-    }, 1000); // Aumenta o tempo de espera para 7 segundos até exibir o conteúdo
+    }, 7000); // Aumenta o tempo de espera para 7 segundos até exibir o conteúdo
 });
 
 function typeWriter() {
@@ -55,7 +55,7 @@ function typeWriter() {
             // Rolagem automática mais suave
             element.scrollIntoView({ behavior: 'smooth', block: 'end' });
 
-            setTimeout(type, 1); // A cada 50ms, adiciona uma letra
+            setTimeout(type, 86); // A cada 50ms, adiciona uma letra
         }
     }
 
