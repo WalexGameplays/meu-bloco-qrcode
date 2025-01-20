@@ -1,0 +1,127 @@
+/* Importando fontes do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Pacifico&family=Courier+Prime&display=swap');
+
+/* Define o estilo do corpo da página */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: linear-gradient(135deg, #ff4b4b, #f7a700, #ff47e6, #3498db); /* Fundo colorido */
+    background-size: 600% 600%;
+    animation: gradient 10s ease infinite; /* Anima o fundo */
+    color: white;
+    font-family: 'Roboto', sans-serif; /* Fonte Roboto para o corpo */
+    text-align: center;
+    overflow: hidden;
+}
+
+/* Animação do fundo */
+@keyframes gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Estilo para o contêiner da barra de carregamento */
+#loading-bar-container {
+    width: 100%;
+    background-color: #333; /* Cor de fundo escuro para a barra */
+    border-radius: 10px;
+    height: 8px;
+    margin-top: 20px; /* Distância do texto */
+    overflow: hidden;
+}
+
+/* Estilo para a barra de carregamento */
+#loading-bar {
+    width: 0%;
+    height: 100%;
+    background-color: #00FF00; /* Cor verde (destaca bem com o fundo colorido) */
+    animation: fillBar 7s linear forwards; /* A barra agora se preenche ao longo de 7 segundos */
+}
+
+/* Animação de preenchimento da barra de carregamento */
+@keyframes fillBar {
+    to {
+        width: 100%;
+    }
+}
+
+/* Estilo do conteúdo que aparece após o carregamento */
+#content {
+    display: none;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.7); /* Fundo preto semitransparente */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    opacity: 0; /* Inicialmente invisível */
+    transform: translateY(20px); /* Inicia com um pequeno deslocamento */
+    animation: revealContent 1s forwards; /* Animação de revelação */
+}
+
+/* Animação do conteúdo revelando com opacidade e deslocamento */
+@keyframes revealContent {
+    to {
+        opacity: 1;
+        transform: translateY(0); /* Move suavemente para o lugar */
+    }
+}
+
+/* Estilo para o título principal */
+h1 {
+    font-size: 2.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4); /* Sombra suave para dar destaque */
+    margin: 0;
+    color: #ffffff; /* Cor do título */
+    font-family: 'Pacifico', cursive; /* Fonte cursiva para o título */
+}
+
+/* Estilo para o parágrafo secundário */
+p {
+    font-size: 1.5rem;
+    margin: 10px 0;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+    color: #ffffff; /* Cor do parágrafo */
+}
+
+/* Caixa de texto para o efeito de digitação */
+#typed-text {
+    margin-top: 20px;
+    font-size: 1.8rem;
+    font-family: "Courier Prime", monospace; /* Fonte tipo máquina de escrever */
+    border-right: 3px solid white;
+    padding-right: 5px;
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    opacity: 0; /* Inicialmente invisível até ser ativado */
+    color: white; /* Cor do texto digitado */
+}
+
+/* Animação de digitação */
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+/* Animação do cursor piscando */
+@keyframes blink {
+    50% { border-color: transparent; }
+}
+
+/* Estilo para o texto de carregamento */
+#loading {
+    font-size: 28px; /* Tamanho maior */
+    font-weight: bold; /* Negrito para destaque */
+    color: #FFD700; /* Cor amarela (contrasta bem com o fundo colorido) */
+    animation: blink 1.5s infinite;
+    font-family: 'Roboto', sans-serif; /* Fonte legível */
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.8), 0 0 25px rgba(0, 0, 0, 0.6); /* Sombra forte e difusa para dar destaque */
+}
