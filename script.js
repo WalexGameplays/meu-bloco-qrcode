@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     setTimeout(() => {
         const loading = document.getElementById('loading');
         const content = document.getElementById('content');
-        
+
         if (loading) loading.style.display = 'none';
         if (content) {
             content.style.display = 'block'; // Mostra o conteúdo
@@ -11,21 +11,30 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Atrasar a digitação para ocorrer depois da revelação do conteúdo
         setTimeout(typeWriter, 1000); // Espera 1 segundo após a revelação
-    }, 7000); // Aumenta o tempo de espera para 7 segundos até exibir o conteúdo
+    }, 1000); // Aumenta o tempo de espera para 7 segundos até exibir o conteúdo
 });
 
 function typeWriter() {
-    const text = `Muito obrigado por apontar o seu celular para este QR Code! 
-    Você acaba de se conectar com algo muito especial!
+    const text = `Muito obrigado por apontar o seu 
+    celular para este QR Code!
+
+    Você acaba de se conectar 
+    com algo muito especial!
     
     Somos o Bloco Eu Sou Eu 
     e com sua atitude, 
-    você faz parte dessa energia contagiante!
-    Agradecemos por estar conosco nesta jornada 
-    de celebração, união e autoestima.
+    você faz parte dessa 
+    energia contagiante!
 
-    Fique ligado, muitas surpresas e momentos 
+    Agradecemos por estar 
+    conosco nesta jornada 
+    de celebração, união e
+    autoestima.
+
+    Fique ligado, muitas 
+    surpresas e momentos 
     incríveis estão por vir!
+    
     E lembre-se sempre:
 
     FOCO, FORÇA E FÉ.`; // Novo texto com quebras de linha
@@ -42,7 +51,11 @@ function typeWriter() {
                 element.innerHTML += text.charAt(i);
             }
             i++;
-            setTimeout(type, 86); // A cada 100ms, adiciona uma letra
+
+            // Rolagem automática mais suave
+            element.scrollIntoView({ behavior: 'smooth', block: 'end' });
+
+            setTimeout(type, 1); // A cada 50ms, adiciona uma letra
         }
     }
 

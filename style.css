@@ -14,7 +14,8 @@ body {
     color: white;
     font-family: 'Roboto', sans-serif; /* Fonte Roboto para o corpo */
     text-align: center;
-    overflow: hidden;
+    padding: 0 20px; /* Adiciona um pequeno espaço nas laterais */
+    overflow: hidden; /* Evita rolagem na página */
 }
 
 /* Animação do fundo */
@@ -53,12 +54,21 @@ body {
 #content {
     display: none;
     padding: 20px;
-    background: rgba(0, 0, 0, 0.7); /* Fundo preto semitransparente */
+    background: rgba(0, 0, 0, 0.8); /* Fundo preto semitransparente */
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
     opacity: 0; /* Inicialmente invisível */
     transform: translateY(20px); /* Inicia com um pequeno deslocamento */
     animation: revealContent 1s forwards; /* Animação de revelação */
+    width: 100%;
+    max-width: 600px; /* Limita a largura máxima */
+    margin: 20px auto; /* Centraliza o conteúdo */
+    height: 70vh; /* Limita a altura do conteúdo */
+    line-height: 1.6; /* Aumenta o espaçamento entre as linhas */
+    overflow-y: auto; /* Permite rolagem vertical se necessário */
+    text-align: center; /* Centraliza o texto */
+    border: none; /* Remove qualquer borda */
+    box-shadow: none; /* Remove qualquer sombra indesejada */
 }
 
 /* Animação do conteúdo revelando com opacidade e deslocamento */
@@ -91,14 +101,16 @@ p {
 #typed-text {
     margin-top: 20px;
     font-size: 1.8rem;
-    font-family: "Courier Prime", monospace; /* Fonte tipo máquina de escrever */
-    border-right: 3px solid white;
+    font-family: "Courier Prime", monospace;
     padding-right: 5px;
     display: inline-block;
     white-space: nowrap;
     overflow: hidden;
-    opacity: 0; /* Inicialmente invisível até ser ativado */
-    color: white; /* Cor do texto digitado */
+    opacity: 0;
+    color: white;
+    max-width: 100%;
+    word-wrap: break-word;
+    border-right: 3px solid transparent; /* Faz o cursor invisível */
 }
 
 /* Animação de digitação */
@@ -124,4 +136,103 @@ p {
     animation: blink 1.5s infinite;
     font-family: 'Roboto', sans-serif; /* Fonte legível */
     text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.8), 0 0 25px rgba(0, 0, 0, 0.6); /* Sombra forte e difusa para dar destaque */
+}
+
+/* Estilo para o rodapé */
+#footer {
+    position: fixed;
+    bottom: 10px;
+    width: 100%;
+    text-align: center;
+    font-size: 0.8rem; /* Diminuímos o tamanho da fonte */
+    color: #ffffff;
+    font-family: 'Roboto', sans-serif;
+    opacity: 0.7; /* Torna o texto mais discreto */
+}
+
+/* Efeito de sombra suave para o rodapé */
+#footer p {
+    font-size: 1.2rem; /* Ajuste para um tamanho menor */
+    margin: 0;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6); /* Sombra sutil para dar destaque */
+}
+
+/* Responsividade para telas pequenas (celulares) */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 1.8rem; /* Diminui o tamanho do título */
+        margin: 10px; /* Ajusta o espaço ao redor do título */
+    }
+
+    p {
+        font-size: 1.2rem; /* Diminui o tamanho do parágrafo */
+        margin: 5px 0;
+    }
+
+    #typed-text {
+        font-size: 1.5rem; /* Ajusta o tamanho da caixa de texto */
+        width: 100%; /* Garante que o texto ocupe 100% da largura */
+        word-wrap: break-word; /* Quebra o texto se ultrapassar a largura da tela */
+    }
+
+    #loading {
+        font-size: 20px; /* Ajuste do tamanho da fonte de carregamento */
+    }
+
+    #loading-bar-container {
+        width: 100%; /* Garante que a barra de carregamento tenha 100% da largura */
+    }
+
+    #loading-bar {
+        animation: fillBar 7s linear forwards; /* Ajusta a animação da barra */
+    }
+}
+
+/* Responsividade para telas médias (tablets) */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    p {
+        font-size: 1.4rem;
+    }
+
+    #typed-text {
+        font-size: 1.6rem;
+    }
+}
+
+/* Responsividade para telas grandes (desktops) */
+@media (min-width: 1024px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    p {
+        font-size: 1.5rem;
+    }
+
+    #typed-text {
+        font-size: 1.8rem;
+    }
+}
+
+/* Estilo para a frase de destaque */
+.highlight {
+    font-weight: bold; /* Negrito */
+    font-size: 2rem; /* Aumenta o tamanho da fonte */
+    color: #FFD700; /* Cor dourada (ou qualquer cor de sua preferência) */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); /* Adiciona uma sombra para destacar ainda mais */
+}
+
+/* Remove a barra de rolagem visível */
+#content::-webkit-scrollbar {
+    width: 0; /* Oculta a barra de rolagem horizontal */
+    height: 0; /* Oculta a barra de rolagem vertical */
+}
+
+#content {
+    -ms-overflow-style: none; /* Para o Internet Explorer */
+    scrollbar-width: none; /* Para o Firefox */
 }
