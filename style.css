@@ -1,22 +1,24 @@
+/* Importando fontes do Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Pacifico&family=Courier+Prime&display=swap');
 
+/* Define o estilo do corpo da página */
 body {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
-    background: linear-gradient(135deg, #ff4b4b, #f7a700, #ff47e6, #3498db);
+    background: linear-gradient(135deg, #ff4b4b, #f7a700, #ff47e6, #3498db); /* Fundo colorido */
     background-size: 600% 600%;
-    animation: gradient 10s ease infinite; 
+    animation: gradient 10s ease infinite; /* Anima o fundo */
     color: white;
-    font-family: 'Roboto', sans-serif; 
+    font-family: 'Roboto', sans-serif; /* Fonte Roboto para o corpo */
     text-align: center;
-    padding: 0 20px; 
-    overflow: hidden; 
+    padding: 0 20px; /* Adiciona um pequeno espaço nas laterais */
+    overflow: hidden; /* Evita rolagem na página */
 }
 
-
+/* Animação do fundo */
 @keyframes gradient {
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
@@ -88,7 +90,7 @@ h1 {
 
 /* Estilo para o parágrafo secundário */
 p {
-    font-size: 1.5rem;
+    font-size: 1rem;
     margin: 10px 0;
     font-weight: bold;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
@@ -116,6 +118,11 @@ p {
     #typed-text {
         font-size: 6vw; /* Reduz o tamanho da fonte em telas pequenas */
     }
+
+    /* Estilo para o texto "⭐ Tenha um ótimo carnaval ⭐" */
+    .carnaval-text {
+        font-size: 1.2rem; /* Diminui o tamanho da fonte para celulares */
+    }
 }
 
 /* Responsividade para telas médias (tablets) */
@@ -123,12 +130,22 @@ p {
     #typed-text {
         font-size: 5vw; /* Ajusta o tamanho da fonte para tablets */
     }
+
+    /* Estilo para o texto "⭐ Tenha um ótimo carnaval ⭐" */
+    .carnaval-text {
+        font-size: 1.3rem; /* Ajusta o tamanho da fonte para tablets */
+    }
 }
 
 /* Responsividade para telas grandes (desktops) */
 @media (min-width: 1024px) {
     #typed-text {
         font-size: 1.8rem; /* Ajuste para telas grandes */
+    }
+
+    /* Estilo para o texto "⭐ Tenha um ótimo carnaval ⭐" */
+    .carnaval-text {
+        font-size: 1.5rem; /* Ajuste para telas grandes */
     }
 }
 
