@@ -1,24 +1,22 @@
-/* Importando fontes do Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Pacifico&family=Courier+Prime&display=swap');
 
-/* Define o estilo do corpo da página */
 body {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
-    background: linear-gradient(135deg, #ff4b4b, #f7a700, #ff47e6, #3498db); /* Fundo colorido */
+    background: linear-gradient(135deg, #ff4b4b, #f7a700, #ff47e6, #3498db);
     background-size: 600% 600%;
-    animation: gradient 10s ease infinite; /* Anima o fundo */
+    animation: gradient 10s ease infinite; 
     color: white;
-    font-family: 'Roboto', sans-serif; /* Fonte Roboto para o corpo */
+    font-family: 'Roboto', sans-serif; 
     text-align: center;
-    padding: 0 20px; /* Adiciona um pequeno espaço nas laterais */
-    overflow: hidden; /* Evita rolagem na página */
+    padding: 0 20px; 
+    overflow: hidden; 
 }
 
-/* Animação do fundo */
+
 @keyframes gradient {
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
@@ -100,17 +98,38 @@ p {
 /* Caixa de texto para o efeito de digitação */
 #typed-text {
     margin-top: 20px;
-    font-size: 1.8rem;
+    font-size: 5vw; /* Ajusta o tamanho da fonte dinamicamente baseado na largura da tela */
     font-family: "Courier Prime", monospace;
     padding-right: 5px;
     display: inline-block;
-    white-space: nowrap;
+    white-space: normal; /* Permite que o texto quebre a linha automaticamente */
     overflow: hidden;
     opacity: 0;
     color: white;
     max-width: 100%;
-    word-wrap: break-word;
+    word-wrap: break-word; /* Quebra palavras longas que não cabem na tela */
     border-right: 3px solid transparent; /* Faz o cursor invisível */
+}
+
+/* Responsividade para telas pequenas (celulares) */
+@media (max-width: 600px) {
+    #typed-text {
+        font-size: 6vw; /* Reduz o tamanho da fonte em telas pequenas */
+    }
+}
+
+/* Responsividade para telas médias (tablets) */
+@media (max-width: 768px) {
+    #typed-text {
+        font-size: 5vw; /* Ajusta o tamanho da fonte para tablets */
+    }
+}
+
+/* Responsividade para telas grandes (desktops) */
+@media (min-width: 1024px) {
+    #typed-text {
+        font-size: 1.8rem; /* Ajuste para telas grandes */
+    }
 }
 
 /* Animação de digitação */
@@ -170,7 +189,7 @@ p {
     }
 
     #typed-text {
-        font-size: 1.5rem; /* Ajusta o tamanho da caixa de texto */
+        font-size: 8vw; /* Ajusta ainda mais o tamanho da fonte em celulares */
         width: 100%; /* Garante que o texto ocupe 100% da largura */
         word-wrap: break-word; /* Quebra o texto se ultrapassar a largura da tela */
     }
@@ -199,7 +218,7 @@ p {
     }
 
     #typed-text {
-        font-size: 1.6rem;
+        font-size: 6vw;
     }
 }
 
