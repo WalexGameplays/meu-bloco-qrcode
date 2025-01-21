@@ -35,7 +35,8 @@ function typeWriter() {
     surpresas e momentos 
     incríveis estão por vir!
     
-    E lembre-se sempre:
+    E lembre-se sempre
+    FFF:
 
     FOCO, FORÇA E FÉ.`; // Novo texto com quebras de linha
 
